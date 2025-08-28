@@ -1,0 +1,31 @@
+
+baseURL = "https://jukejeew.github.io/sarazian/"
+title = "สาระเซียน — ทุกเรื่องราวมีชีวิต"
+theme = "PaperMod"
+languageCode = "th"
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  defaultTheme = "auto"
+  showReadingTime = true
+  showShareButtons = true
+  showPostNavLinks = true
+  env = "production"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]  # JSON ไว้เผื่อทำ search ภายหลัง
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+relativeURLs = true
+canonifyURLs = true
+
