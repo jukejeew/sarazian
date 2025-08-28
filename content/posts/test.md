@@ -1,7 +1,7 @@
 ---
 title: "Test"
-date: 2025-08-29T01:38:20+07:00
-draft: true
+date: 2025-08-28T01:38:20+07:00
+draft: false
 author: "วัยสนธยา"
 categories: ["เล่าเรื่อง", "ธุรกิจ-เศรษฐกิจ-ไลฟ์สไตล์"]
 tags: ["SaraZian"]
