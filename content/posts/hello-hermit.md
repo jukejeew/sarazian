@@ -32,9 +32,6 @@ cover:
 (ข้อคิด ทิ้งท้าย หรือมุมมองส่วนตัว)
 
 ---
-{{< footer-note >}}
----
-{{< credit >}}
----
-{{< license >}}
----
+{{% footer-note %}}
+{{% credit %}}
+{{% license %}}
