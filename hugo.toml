@@ -1,31 +1,67 @@
-
-baseURL = "https://jukejeew.github.io/sarazian/"
-title = "สาระเซียน — ทุกเรื่องราวมีชีวิต"
-theme = "PaperMod"
+baseURL = "/"
+title = "สาระเซียน"
 languageCode = "th"
-enableRobotsTXT = true
+defaultContentLanguage = "th"
+defaultContentLanguageInSubdir = false
+theme = "hermit-v2"
+enableGitInfo = true
 
-[pagination]
-  pagerSize = 10
-
-[params]
-  defaultTheme = "auto"
-  showReadingTime = true
-  showShareButtons = true
-  showPostNavLinks = true
-  env = "production"
-
-[markup.goldmark.renderer]
-  unsafe = true
-
-[outputs]
-  home = ["HTML", "RSS", "JSON"]  # JSON ไว้เผื่อทำ search ภายหลัง
+[[menu.main]]
+  name = "Posts"
+  url  = "/posts/"
+  weight = 1
+[[menu.main]]
+  name = "Categories"
+  url  = "/categories/"
+  weight = 2
+[[menu.main]]
+  name = "Tags"
+  url  = "/tags/"
+  weight = 3
+[[menu.main]]
+  name = "About"
+  url  = "/about/"
+  weight = 4
 
 [taxonomies]
   category = "categories"
-  tag = "tags"
-  series = "series"
+  tag      = "tags"
 
-relativeURLs = true
-canonifyURLs = true
+[author]
+  name  = "วัยสนธยา"
+  about = "นักเขียนมือใหม่บน Debian + ThinkPad"
 
+[params]
+  description  = "☕ ทุกเรื่องราวมีชีวิต"
+  homeSubtitle = "เล่าเรื่อง → ธุรกิจ → เศรษฐกิจ → ไลฟ์สไตล์"
+  themeColor   = "dark"
+  readTime     = true
+  toc          = true
+  # about/footer/credit/license switches
+  aboutVariant   = "full"      # "full" | "compact"
+  articleFooter  = "slogan"    # "slogan" | "none"
+  articleCredit  = "show"      # "show"   | "hide"
+  licenseType    = "cc"        # "cc"     | "copyright"
+  # customCSS    = ["css/custom.css"]
+
+[params.dateform]
+  LongDate      = "Jan 2, 2006"
+  ShortDate     = "Jan 2"
+  NumDateShort  = "2006-01-02"
+  NumDateLong   = "2006-01-02 15:04 -0700"
+  CopyrightDate = "2006"
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    lineNos   = true
+
+[outputs]
+  home     = ["HTML","RSS"]
+  section  = ["HTML","RSS"]
+  page     = ["HTML"]
+  taxonomy = ["HTML"]
+  term     = ["HTML"]
+
+[pagination]
+  pagerSize = 10
