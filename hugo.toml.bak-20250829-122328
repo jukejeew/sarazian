@@ -1,0 +1,80 @@
+
+baseURL = "https://jukejeew.github.io/sarazian/"
+title = "สาระเซียน"
+#theme = "PaperMod"
+theme = "hermit-v2"
+languageCode = "th"
+enableRobotsTXT = true
+
+publishDir = "public"
+
+[pagination]
+  pagerSize = 10
+
+[author]
+  name  = "วัยสนธยา"
+  about = "นักเขียนมือใหม่บน Debian + ThinkPad"
+
+[params]
+  description  = "☕ ทุกเรื่องราวมีชีวิต"
+  homeSubtitle = "เล่าเรื่อง → ธุรกิจ → เศรษฐกิจ → ไลฟ์สไตล์"
+  themeColor   = "dark"     # "dark" หรือ "light"
+  paginate     = 10          # จำนวนโพสต์ต่อหน้า
+  # เปิด/ปิดส่วนที่ชอบ
+  toc = true                 # ตารางสารบัญในโพสต์
+  readTime = true            # แสดงเวลาอ่านโดยประมาณ
+
+[params.dateform]
+  LongDate      = "Jan 2, 2006"           # ใช้บนหน้าโพสต์เดี่ยว
+  ShortDate     = "Jan 2"                  # ใช้ใน list view (หมวด/แท็ก/หน้าแรก)
+  NumDateShort  = "2006-01-02"             # วันที่แบบตัวเลขสั้น
+  NumDateLong   = "2006-01-02 15:04 -0700" # วันที่+เวลาแบบตัวเลข
+  CopyrightDate = "2006"                   # ฟอร์แมตปีใน footer
+
+# เมนูหลัก
+#[[menu.main]]
+#  name = "Home"
+#  url  = "/"
+#  weight = 1
+
+[[menu.main]]
+  name = "Posts"
+  url  = "/posts/"
+  weight = 2
+
+[[menu.main]]
+  name = "About"
+  url  = "/about/"
+  weight = 3
+
+# ลิงก์โซเชียล (ใส่เท่าที่มี)
+[[params.social]]
+  name = "github"
+  url  = "https://github.com/jukejeew"
+
+[[params.social]]
+  name = "blockdit"
+  url  = "https://www.blockdit.com/sarazian"
+
+
+#[params]
+#  defaultTheme = "auto"
+#  showReadingTime = true
+#  showShareButtons = true
+#  showPostNavLinks = true
+#  env = "production"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]  # JSON ไว้เผื่อทำ search ภายหลัง
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+relativeURLs = true
+canonifyURLs = true
+
