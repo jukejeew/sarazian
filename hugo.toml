@@ -3,7 +3,7 @@ title = "สาระเซียน"
 languageCode = "th"
 defaultContentLanguage = "th"
 defaultContentLanguageInSubdir = false
-theme = "hermit-v2"
+theme = "PaperMod"
 enableGitInfo = true
 
 [[menu.main]]
@@ -27,15 +27,13 @@ enableGitInfo = true
   category = "categories"
   tag      = "tags"
 
-[author]
-  name  = "วัยสนธยา"
-  about = "นักเขียนมือใหม่บน Debian + ThinkPad"
-
 [params]
   description  = "☕ ทุกเรื่องราวมีชีวิต"
   homeSubtitle = "เล่าเรื่อง → ธุรกิจ → เศรษฐกิจ → ไลฟ์สไตล์"
+  name  = "วัยสนธยา"
+  about = "นักเขียนมือใหม่บน Debian + ThinkPad"
   themeColor   = "dark"
-  readTime     = true
+  readTime     = false
   toc          = true
   # about/footer/credit/license switches
   aboutVariant   = "full"      # "full" | "compact"
