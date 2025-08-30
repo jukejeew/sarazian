@@ -12,4 +12,5 @@ credit: "show"        # "show"   | "hide"
 license: "cc"         # "cc"     | "copyright"
 ---
 ย่อหน้าเปิดเรื่อง…
-Test Zed.
+Test Zed. และทดสอบภาษาไทย
+{{% footer-note %}}
