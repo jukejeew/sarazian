@@ -15,3 +15,4 @@ license: "copyright"         # "cc"     | "copyright"
 Test Zed. และทดสอบภาษาไทย
 {{% footer-note %}}
 {{% license %}}
+{{% credit %}}
