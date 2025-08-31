@@ -14,5 +14,5 @@ license: "copyright"         # "cc"     | "copyright"
 ย่อหน้าเปิดเรื่อง…
 Test Zed. และทดสอบภาษาไทย
 {{% footer-note %}}
-{{% license %}}
 {{% credit %}}
+{{% license %}}
