@@ -9,7 +9,7 @@ tags: []
 
 footer: "slogan"      # "slogan" | "none"
 credit: "show"        # "show"   | "hide"
-license: "cc"         # "cc"     | "copyright"
+license: "copyright"         # "cc"     | "copyright"
 ---
 ย่อหน้าเปิดเรื่อง…
 Test Zed. และทดสอบภาษาไทย
