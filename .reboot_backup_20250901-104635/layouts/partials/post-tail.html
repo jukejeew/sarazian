@@ -1,0 +1,41 @@
+<div class="post-tail">
+  {{/* หมายเหตุ */}}
+  {{- if (ne ((.Site.Params.footerNote.mode | default "show") | lower) "hide") -}}
+    <hr>
+    <p><strong>{{ .Site.Params.footerNote.title | default "หมายเหตุ" }}</strong></p>
+    {{ with .Site.Params.footerNote.text }}<p>{{ . }}</p>{{ end }}
+  {{- end -}}
+
+  {{/* เครดิต */}}
+  {{- if (ne ((.Site.Params.articleCredit | default "show") | lower) "hide") -}}
+    <hr>
+    <p>
+      {{ .Site.Params.credit.publishedOn | default "บทความนี้เผยแพร่บน" }}
+      <em>{{ .Site.Params.siteName | default "เพจสาระเซียน" }}</em><br>
+      {{ .Site.Params.credit.writtenBy | default "เขียนโดย" }}
+      <em>{{ .Params.author | default (.Site.Params.author | default "วัยสนธยา") }}</em>
+    </p>
+  {{- end -}}
+
+  {{/* ใบอนุญาต/ลิขสิทธิ์ */}}
+  {{- if (ne ((.Site.Params.license.mode | default "show") | lower) "hide") -}}
+    <hr>
+    {{- $style := (lower (printf "%v" (.Site.Params.license.style | default "cc"))) -}}
+    {{- $year  := (or .Date .PublishDate .Lastmod now) | time.Format "2006" -}}
+    {{- if eq $style "copyright" -}}
+      <p>© {{ $year }} {{ .Site.Params.license.holder }}</p>
+    {{- else -}}
+      <p>
+        {{ .Site.Params.license.label | default "สัญญาอนุญาต" }}
+        {{- if .Site.Params.license.url -}}
+          <a href="{{ .Site.Params.license.url }}" target="_blank" rel="license noopener">
+            {{ .Site.Params.license.type | default "CC BY-NC-SA 4.0" }}
+          </a>
+        {{- else -}}
+          {{ .Site.Params.license.type | default "CC BY-NC-SA 4.0" }}
+        {{- end -}}
+      </p>
+      <p>© {{ $year }} {{ .Site.Params.license.holder }}</p>
+    {{- end -}}
+  {{- end -}}
+</div>

@@ -49,7 +49,7 @@ articleCredit = "show"                                      # "show"   | "hide"
 [params.footerNote]
 mode = "show"
 title = "หมายเหตุ"
-text = "*..." # เพิ่มข้อความเพื่อให้แสดงผล
+text = "© 2025 Sarazian" # เพิ่มข้อความเพื่อให้แสดงผล
 
 [params.credit]
 publishedOn = "บทความนี้เผยแพร่บน"

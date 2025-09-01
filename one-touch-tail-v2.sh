@@ -1,0 +1,65 @@
+mkdir -p layouts/partials
+cat > layouts/partials/post-tail.html <<'TPL'
+<!--
+Tail partial: layouts/partials/post-tail.html
+Override รายโพสต์: front matter → credit.*, footerNote.*, license.*
+Global defaults: hugo.toml → [params.footerNote], [params.credit], [params.license]
+ไอคอน CC: ใช้จาก static/cc/*.svg เท่านั้น (ไม่โหลดเน็ต)
+-->
+<div class="post-tail">
+  {{/* ---------- FOOTNOTE ---------- */}}
+  {{ $fnMode := lower (printf "%v" (or .Params.footerNote.mode .Params.footerNote .Site.Params.footerNote.mode "show")) }}
+  {{ if ne $fnMode "hide" }}
+    <hr>
+    <p><strong>{{ or .Params.footerNote.title .Site.Params.footerNote.title "หมายเหตุ" }}</strong></p>
+    {{ with (or .Params.footerNote.text .Site.Params.footerNote.text "") }}{{ . | markdownify | safeHTML }}{{ end }}
+  {{ end }}
+
+  {{/* ---------- CREDIT ---------- */}}
+  {{ $crMode := lower (printf "%v" (or .Params.credit.mode .Params.credit .Site.Params.articleCredit "show")) }}
+  {{ if ne $crMode "hide" }}
+    <hr>
+    {{ $pub := or .Site.Params.credit.publishedOn "บทความนี้เผยแพร่บน" }}
+    {{ $by  := or .Site.Params.credit.writtenBy   "เขียนโดย" }}
+    {{ $site := or .Params.credit.siteName .Site.Params.siteName "เพจสาระเซียน" }}
+    {{ $author := or .Params.credit.author .Params.author .Site.Params.author "วัยสนธยา" }}
+    <p>{{ $pub }} <em>{{ $site }}</em><br>{{ $by }} <em>{{ $author }}</em></p>
+  {{ end }}
+
+  {{/* ---------- LICENSE (ไม่มี © ที่นี่) ---------- */}}
+  {{ $lcMode := lower (printf "%v" (or .Params.license.mode .Params.license .Site.Params.license.mode "show")) }}
+  {{ if ne $lcMode "hide" }}
+    <hr>
+    {{ $url   := or .Params.license.url   .Site.Params.license.url  "https://creativecommons.org/licenses/by-nc-sa/4.0/" }}
+    {{ $label := or .Site.Params.license.label "สัญญาอนุญาต" }}
+    {{ $type  := or .Params.license.type  .Site.Params.license.type "CC BY-NC-SA 4.0" }}
+
+    {{/* ใช้ไอคอนจาก static/cc/* ถ้าครบทั้ง 4 ไฟล์ */}}
+    {{ $fsDir := "static/cc" }}
+    {{ $webDir := "/cc" }}
+    {{ $hasCC := and (fileExists (printf "%s/cc.svg" $fsDir))
+                    (fileExists (printf "%s/by.svg" $fsDir))
+                    (fileExists (printf "%s/nc.svg" $fsDir))
+                    (fileExists (printf "%s/sa.svg" $fsDir)) }}
+
+    {{ if $hasCC }}
+      <p style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap">
+        <a href="{{ $url }}" target="_blank" rel="license noopener" style="display:inline-flex;align-items:center;gap:.35rem;text-decoration:none">
+          <img src="{{ printf "%s/cc.svg" $webDir }}" alt="CC"  width="22" height="22" loading="lazy"/>
+          <img src="{{ printf "%s/by.svg" $webDir }}" alt="BY"  width="22" height="22" loading="lazy"/>
+          <img src="{{ printf "%s/nc.svg" $webDir }}" alt="NC"  width="22" height="22" loading="lazy"/>
+          <img src="{{ printf "%s/sa.svg" $webDir }}" alt="SA"  width="22" height="22" loading="lazy"/>
+          <span style="font-weight:600">{{ $type }}</span>
+        </a>
+        <span>— {{ $label }}</span>
+      </p>
+    {{ else }}
+      <p>
+        {{ $label }}
+        {{ if $url }}<a href="{{ $url }}" target="_blank" rel="license noopener">{{ $type }}</a>{{ else }}{{ $type }}{{ end }}
+      </p>
+    {{ end }}
+  {{ end }}
+</div>
+TPL
+

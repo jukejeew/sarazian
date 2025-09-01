@@ -4,12 +4,12 @@
 # - Global defaults: hugo.toml → [params.footerNote], [params.credit], [params.license]
 # - Per-post override: ใช้ credit/footerNote/license ด้านล่าง (mode: show|hide)
 
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
+title: "MyKeys"
+date: 2025-09-01T13:07:21+07:00
 draft: true
 categories: []
 tags: []
-author: "{{ .Site.Params.author }}"
+author: "วัยสนธยา"
 
 # --- หางโพสต์ (ปรับเฉพาะบทความนี้) ---
 credit:
@@ -30,3 +30,6 @@ license:
   holder: ""
   year: ""
 ---
+
+# บ้านไร่ชายนา
+## อากาสที่ละเมียดละมุน

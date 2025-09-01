@@ -1,0 +1,20 @@
+{{ $hr := .Get "hr" | default "true" }}
+{{ $mode := lower (printf "%v" (.Site.Params.license.mode | default "show")) }}
+{{ if ne $mode "hide" -}}
+  {{ with .Inner }}{{ if ne (lower $hr) "false" }}{{ "---" | markdownify }}{{ end }}{{ . | markdownify }}{{ end }}
+  {{ $style := lower (printf "%v" (.Site.Params.license.style | default "cc")) }}
+  {{ $pageTime := or .Page.Date .Page.PublishDate .Page.Lastmod now }}
+  {{ $year := .Get "year" | default ($pageTime | time.Format "2006") }}
+  {{ if ne (lower $hr) "false" }}{{ "---" | markdownify }}{{ end }}
+  {{ if eq $style "copyright" }}
+    {{ printf "© %s %s\n" $year (.Get "holder" | default (.Site.Params.license.holder | default "")) | markdownify }}
+  {{ else }}
+    {{ $type := .Get "type" | default (.Site.Params.license.type | default "CC BY-NC-SA 4.0") }}
+    {{ $url  := .Get "url"  | default (.Site.Params.license.url  | default "") }}
+    {{ printf "%s %s\n© %s %s\n"
+       (.Site.Params.license.label | default "สัญญาอนุญาต")
+       (cond (ne $url "") (printf "[%s](%s)" $type $url) $type)
+       $year (.Get "holder" | default (.Site.Params.license.holder | default "")) | markdownify }}
+  {{ end }}
+{{- end }}
+

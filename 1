@@ -1,0 +1,16 @@
+{{ $mode := .Get "mode" | default (.Page.Params.footerNote.mode) | default (.Site.Params.footerNote.mode) | default "show" }}
+{{ if eq $mode "show" -}}
+  {{ $hr := .Get "hr" | default "true" }}
+  {{ $title := .Get "title" | default (.Page.Params.footerNote.title | default .Site.Params.footerNote.title) }}
+
+  {{ if eq $hr "true" }}{{ "---" | markdownify }}{{ end }}
+  {{ if $title }}{{ printf "**%s**" $title | markdownify }}{{ end }}
+
+  {{ with .Inner }}
+    {{ . | markdownify }}
+  {{ else }}
+    {{ $text := .Page.Params.footerNote.text | default .Site.Params.footerNote.text | default "" }}
+    {{ $text | markdownify }}
+  {{ end }}
+{{- end }}
+

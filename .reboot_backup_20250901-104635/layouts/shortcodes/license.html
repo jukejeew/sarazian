@@ -1,0 +1,19 @@
+{{ $style  := lower (printf "%v" (.Get "style" | default (.Site.Params.license.style | default "cc"))) }}
+{{ $t      := .Get "type"  | default (.Site.Params.license.type  | default "CC BY-NC-SA 4.0") }}
+{{ $url    := .Get "url"   | default (cond (eq $style "cc") (.Site.Params.license.url | default "https://creativecommons.org/licenses/by-nc-sa/4.0/") "") }}
+{{ $holder := .Get "holder"| default (.Site.Params.license.holder| default "Sarazian") }}
+{{ $year   := .Get "year"  | default ((or .Page.Date .Page.PublishDate .Page.Lastmod now) | time.Format "2006") }}
+{{ $customText := .Get "custom" | default (.Site.Params.license.custom | default "") }}
+
+{{ with .Inner }}
+  {{ $customText = . | markdownify | safeHTML }}
+{{ end }}
+
+{{ if eq $style "copyright" }}
+  {{ printf "<p>© %s %s</p>" $year $holder | safeHTML }}
+{{ else if eq $style "cc" }}
+  {{ $link := cond (ne $url "") (printf "<a href=\"%s\" target=\"_blank\" rel=\"license noopener\">%s</a>" $url $t) $t }}
+  {{ printf "<p>%s %s</p><p>© %s %s</p>" (.Site.Params.license.label | default "สัญญาอนุญาต") $link $year $holder | safeHTML }}
+{{ else }}
+  {{ printf "<p>%s</p>" $customText | safeHTML }}
+{{ end }}
