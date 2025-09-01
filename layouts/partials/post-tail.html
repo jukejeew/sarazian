@@ -43,10 +43,10 @@ Global defaults: hugo.toml → [params.footerNote], [params.credit], [params.lic
     {{ if $hasCC }}
       <p style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap">
         <a href="{{ $url }}" target="_blank" rel="license noopener" style="display:inline-flex;align-items:center;gap:.35rem;text-decoration:none">
-          <img src="{{ printf "%s/cc.svg" $webDir }}" alt="CC"  width="22" height="22" loading="lazy"/>
-          <img src="{{ printf "%s/by.svg" $webDir }}" alt="BY"  width="22" height="22" loading="lazy"/>
-          <img src="{{ printf "%s/nc.svg" $webDir }}" alt="NC"  width="22" height="22" loading="lazy"/>
-          <img src="{{ printf "%s/sa.svg" $webDir }}" alt="SA"  width="22" height="22" loading="lazy"/>
+            <img src="{{ "cc/cc.svg" | relURL }}" alt="CC"  width="22" height="22" loading="lazy"/>
+            <img src="{{ "cc/by.svg" | relURL }}" alt="BY"  width="22" height="22" loading="lazy"/>
+            <img src="{{ "cc/nc.svg" | relURL }}" alt="NC"  width="22" height="22" loading="lazy"/>
+            <img src="{{ "cc/sa.svg" | relURL }}" alt="SA"  width="22" height="22" loading="lazy"/>
           <span style="font-weight:600">{{ $type }}</span>
         </a>
         <span>— {{ $label }}</span>
