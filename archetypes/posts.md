@@ -1,32 +1,55 @@
 ---
-# NOTE
-# - Tail partial: layouts/partials/post-tail.html
-# - Global defaults: hugo.toml → [params.footerNote], [params.credit], [params.license]
-# - Per-post override: ใช้ credit/footerNote/license ด้านล่าง (mode: show|hide)
-
+# ============ META พื้นฐาน ============
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: true
 categories: []
 tags: []
-author: "{{ .Site.Params.author }}"
+author: "{{ .Site.Params.author }}"   # ตั้งค่าใน hugo.toml → [params] author = "วัยสนธยา"
 
-# --- หางโพสต์ (ปรับเฉพาะบทความนี้) ---
-credit:
-  mode: show
-  siteName: ""
-  author: ""
-
+# ============ FOOTER NOTE (บันทึก/ชวนคุยท้ายบท) ============
 footerNote:
-  mode: show
-  title: ""
-  text: ""
+  mode: show            # show | hide
+  title: ""             # หัวข้อสั้น เช่น "ชวนคุย"
+  text: ""              # เนื้อหา รองรับ Markdown
 
+# ============ CREDIT (เครดิตเผยแพร่/ผู้เขียน) ============
+credit:
+  mode: show            # show | hide
+  siteName: "{{ .Site.Params.siteName | default "สาระเซียน" }}"
+  author: ""            # เว้นว่าง = fallback ไปที่ .Params.author / .Site.Params.author
+
+# ============ LICENSE (เลือก style ได้: cc | copyright | custom) ============
 license:
-  mode: show
-  style: cc
-  type: ""
-  url: ""
-  holder: ""
-  year: ""
+  mode: show            # show | hide
+  style: copyright      # <-- ค่าเริ่มต้น: 'copyright' ดูเรียบ ใช้ง่าย
+  # --- โหมด CC ---
+  type: "BY-NC-SA 4.0"  # ใช้เมื่อ style: cc
+  url: "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+
+  # --- โหมด Copyright ---
+  holder: "{{ .Site.Params.author }}"  # ผู้ถือลิขสิทธิ์ (fallback = ผู้เขียน)
+  year: "{{ (time .Date).Year }}"      # ปีลิขสิทธิ์ (ดึงจากวันที่โพสต์)
+
+  # --- โหมด Custom ---
+  text: ""               # เขียนข้อความเองได้ รองรับ Markdown (ใช้เมื่อ style: custom)
 ---
+
+## Hook เปิดเรื่อง
+(เล่าเหตุการณ์/ฉากสั้น ๆ ที่ดึงผู้อ่านเข้ามา)
+
+## Timeline / เนื้อหาหลัก
+(เรียงเหตุการณ์/ข้อมูลหลักตามลำดับ หรือสอดแทรกเป็นช่วง ๆ)
+
+## เชื่อมสู่ธุรกิจ
+(สิ่งที่ตัวละคร/เรื่องนี้สร้างหรือเกี่ยวข้องกับโลกธุรกิจ)
+
+## ผูกกับเศรษฐกิจ
+(มุมมองกว้างขึ้น — ผลกระทบ, ความเชื่อมโยง, ภาพใหญ่)
+
+## ไลฟ์สไตล์
+(สะท้อนค่านิยม วิธีคิด หรือการเลือกใช้ชีวิต)
+
+## มุมมองผู้เขียน
+(ข้อคิด/บทสรุปที่อยากฝากผู้อ่าน)
+

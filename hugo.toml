@@ -41,10 +41,6 @@ ShowToc = true
 aboutVariant = "full"                                       # "full" | "compact"
 articleFooter = "custom"
 articleCredit = "show"                                      # "show"   | "hide"
-# licenseType    = "cc"  # ลบออกเพื่อเลี่ยงซ้ำ
-
-[params.shortcodes] # ลบ "mode = "simple"" ออก เพราะไม่ใช่การตั้งค่าที่ถูกต้อง
-# (ถ้าต้องการกำหนดเพิ่มเติม ใช้ตามความเหมาะสม)
 
 [params.footerNote]
 mode = "show"
@@ -57,10 +53,12 @@ writtenBy = "เขียนโดย"
 
 [params.license]
 mode = "show"
+style = "copyright"
 label = "สัญญาอนุญาต"
+holder = "SaraZian"
+year = 2025
 type = "CC BY-NC-SA 4.0"
 url = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
-holder = "Sarazian"
 
 [params.dateform]
 LongDate = "Jan 2, 2006"

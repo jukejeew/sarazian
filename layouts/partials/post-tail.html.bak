@@ -25,13 +25,13 @@ Global defaults: hugo.toml → [params.footerNote], [params.credit], [params.lic
     <p>{{ $pub }} <em>{{ $site }}</em><br>{{ $by }} <em>{{ $author }}</em></p>
   {{ end }}
 
-  {{/* ---------- LICENSE (cc / copyright / custom) ---------- */}}
+  {{/* ---------- LICENSE ---------- */}}
   {{ $lcMode := lower (printf "%v" (or .Params.license.mode .Params.license .Site.Params.license.mode "show")) }}
   {{ if ne $lcMode "hide" }}
     <hr>
-
-    {{/* ค่าใช้งานร่วม + fallback */}}
     {{ $style  := lower (printf "%v" (or .Params.license.style .Site.Params.license.style "cc")) }}
+
+    {{/* Common fields */}}
     {{ $label  := or .Site.Params.license.label "สัญญาอนุญาต" }}
 
     {{/* CC fields */}}
@@ -42,23 +42,11 @@ Global defaults: hugo.toml → [params.footerNote], [params.credit], [params.lic
     {{ $year   := or .Params.license.year .Site.Params.license.year (time .Date).Year }}
     {{ $holder := or .Params.license.holder .Site.Params.license.holder .Site.Params.author "ผู้ถือลิขสิทธิ์" }}
 
-    {{/* Custom fields (markdown ได้) */}}
-    {{ $customText := or .Params.license.text .Site.Params.license.text "" }}
-
-    {{ if eq $style "custom" }}
-      {{ if $customText }}
-        <div class="license-custom">
-          {{ $customText | markdownify | safeHTML }}
-        </div>
-      {{ else }}
-        <p>© {{ $year }} {{ $holder }}</p>
-      {{ end }}
-
-    {{ else if eq $style "copyright" }}
+    {{ if eq $style "copyright" }}
       <p>© {{ $year }} {{ $holder }}</p>
 
     {{ else if eq $style "cc" }}
-      {{/* ใช้ไอคอนจาก static/cc/* ถ้าครบ */}}
+      {{/* ใช้ไอคอนจาก static/cc/* ถ้าครบทั้ง 4 ไฟล์ */}}
       {{ $fsDir := "static/cc" }}
       {{ $hasCC := and (fileExists (printf "%s/cc.svg" $fsDir))
                       (fileExists (printf "%s/by.svg" $fsDir))
@@ -83,7 +71,7 @@ Global defaults: hugo.toml → [params.footerNote], [params.credit], [params.lic
       {{ end }}
 
     {{ else }}
-      {{/* style ไม่รู้จัก → fallback เป็น © */}}
+      {{/* style อื่น ๆ หรือไม่กำหนด: fallback เป็น Copyright */}}
       <p>© {{ $year }} {{ $holder }}</p>
     {{ end }}
   {{ end }}
