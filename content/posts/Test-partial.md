@@ -6,7 +6,7 @@
 
 title: "Test Partial"
 date: 2025-09-01T18:19:50+07:00
-draft: true
+draft: false
 categories: []
 tags: []
 author: "วัยสนธยา"
