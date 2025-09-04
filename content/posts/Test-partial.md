@@ -9,7 +9,7 @@ date: 2025-09-01T18:19:50+07:00
 draft: false
 categories: []
 tags: []
-author: "วัยสนธยา"
+author: "บก. จุ๊กจิ๋ว"
 
 # --- หางโพสต์ (ปรับเฉพาะบทความนี้) ---
 credit:
