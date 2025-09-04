@@ -5,7 +5,7 @@
 # - Per-post override: ใช้ credit/footerNote/license ด้านล่าง (mode: show|hide)
 
 title: "Test Partial"
-date: 2025-09-01T18:19:50+07:00
+date: 2025-09-01T18:19:50+07:01
 draft: false
 categories: []
 tags: []
