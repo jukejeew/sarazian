@@ -13,7 +13,7 @@ author: "บก. จุ๊กจิ๋ว"
 
 # --- หางโพสต์ (ปรับเฉพาะบทความนี้) ---
 credit:
-  mode: show
+  mode: hide
   siteName: ""
   author: ""
 
