@@ -43,7 +43,7 @@ articleFooter = "custom"
 articleCredit = "show"                                      # "show"   | "hide"
 
 [params.footerNote]
-mode = "show"
+mode = "hide" 													# "show"   | "hide"
 title = "หมายเหตุ"
 text = "*..."      # เพิ่มข้อความเพื่อให้แสดงผล
 
@@ -52,7 +52,7 @@ publishedOn = "บทความนี้เผยแพร่บน"
 writtenBy = "เขียนโดย"
 
 [params.license]
-mode = "show"
+mode = "hide"													# "show"   | "hide"
 style = "copyright"
 label = "สัญญาอนุญาต"
 holder = "SaraZian"
