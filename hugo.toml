@@ -41,6 +41,7 @@ ShowToc = true
 aboutVariant = "full"                                       # "full" | "compact"
 articleFooter = "custom"
 articleCredit = "show"                                      # "show"   | "hide"
+mainSections = ["posts"]
 
 [params.footerNote]
 mode = "hide" 													# "show"   | "hide"
