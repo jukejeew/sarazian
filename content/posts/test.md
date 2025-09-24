@@ -2,7 +2,7 @@
 # ============ META พื้นฐาน ============
 title: "Test"
 date: 2025-09-24T19:37:31+07:00
-draft: true
+draft: false
 categories: []
 tags: []
 author: "วัยสนธยา"   # ตั้งค่าใน hugo.toml → [params] author = "วัยสนธยา"
