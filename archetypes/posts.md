@@ -9,19 +9,19 @@ author: "{{ .Site.Params.author }}"   # ตั้งค่าใน hugo.toml �
 
 # ============ FOOTER NOTE (บันทึก/ชวนคุยท้ายบท) ============
 footerNote:
-  mode: show            # show | hide
+  mode: hide            # show | hide
   title: ""             # หัวข้อสั้น เช่น "ชวนคุย"
   text: ""              # เนื้อหา รองรับ Markdown
 
 # ============ CREDIT (เครดิตเผยแพร่/ผู้เขียน) ============
 credit:
-  mode: show            # show | hide
+  mode: hide            # show | hide
   siteName: "{{ .Site.Params.siteName | default "สาระเซียน" }}"
   author: ""            # เว้นว่าง = fallback ไปที่ .Params.author / .Site.Params.author
 
 # ============ LICENSE (เลือก style ได้: cc | copyright | custom) ============
 license:
-  mode: show            # show | hide
+  mode: hide            # show | hide
   style: copyright      # <-- ค่าเริ่มต้น: 'copyright' ดูเรียบ ใช้ง่าย
   # --- โหมด CC ---
   type: "BY-NC-SA 4.0"  # ใช้เมื่อ style: cc
