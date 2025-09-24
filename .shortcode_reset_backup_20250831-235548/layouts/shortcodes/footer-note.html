@@ -1,8 +1,0 @@
-{{ $hr := .Get "hr" | default "true" }}
-{{ $show := ne (lower (printf "%v" (.Site.Params.footerNote.mode | default "show"))) "hide" }}
-{{ if $show -}}
-  {{ if ne (lower $hr) "false" }}{{ "---" | markdownify }}{{ end }}
-  {{ printf "**%s**" (.Get "title" | default (.Site.Params.footerNote.title | default "หมายเหตุ")) | markdownify }}
-  {{ with .Inner }}{{ . | markdownify }}{{ else }}{{ (.Site.Params.footerNote.text | default "") | markdownify }}{{ end }}
-{{- end }}
-

@@ -1,7 +1,0 @@
-{{ $author := .Get "author" | default .Site.Params.author }}
-{{ $date := .Get "date" | default (.Page.Date.Format .Site.Params.dateform.LongDate) }}
-{{ $customText := .Inner | markdownify | safeHTML }}
-{{ if not $customText }}
-  {{ $customText = printf "%s %s | %s %s" (.Site.Params.credit.writtenBy) $author (.Site.Params.credit.publishedOn) $date }}
-{{ end }}
-<p>{{ $customText | safeHTML }}</p>

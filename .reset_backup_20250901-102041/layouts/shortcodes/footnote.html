@@ -1,7 +1,0 @@
-{{ $id := .Get "id" | default (printf "fn%d" (add (len .Page.Scratch.Get "footnotes") 1)) }}
-{{ $text := .Inner | markdownify | safeHTML }}
-{{ if not $text }}
-  {{ $text = .Get "text" | markdownify | safeHTML }}
-{{ end }}
-{{ .Page.Scratch.SetInMap "footnotes" $id $text }}
-<sup><a href="#fnref:$id" id="fn:$id">{{ len (where .Page.Scratch.Get "footnotes" "==" $text) }}</a></sup>
