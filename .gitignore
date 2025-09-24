@@ -1,6 +1,28 @@
+# Hugo local build
 /public/
-/resources/
-/public/
-/resources/
-/public/
-/resources/
+/publish/
+
+# Build outputs (ให้ gh-pages เท่านั้น)
+index.html
+index.xml
+index.json
+robots.txt
+sitemap.xml
+404.html
+/categories/
+/tags/
+/series/
+
+# Hugo tmp/backup
+.hugo_build.lock
+hugo.toml.bak*
+hugo.toml.__tmp__
+.content_*backup*/
+.reboot_backup_*/
+.reset_backup_*/
+.shortcode_reset_backup_*/
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+*.swp
