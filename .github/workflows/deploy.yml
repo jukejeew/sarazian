@@ -35,19 +35,6 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      # (ทางเลือก) เปิด PostCSS/Autoprefixer ให้ PaperMod
-      - name: Setup Node (for PostCSS)
-        uses: actions/setup-node@v4
-        with:
-          node-version: 'lts/*'
-          cache: 'npm'
-
-      - name: Install PostCSS deps
-        run: |
-          npm pkg set name=@site/tmp >/dev/null 2>&1 || true
-          npm pkg set version=0.0.0 >/dev/null 2>&1 || true
-          npm i -D postcss postcss-cli autoprefixer
-
       - name: Build
         env:
           HUGO_ENV: production
