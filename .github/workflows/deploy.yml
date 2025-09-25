@@ -1,53 +1,35 @@
 name: Deploy Hugo to GitHub Pages
-
 on:
-  push:
-    branches: [ main ]
+  push:
+    branches: [ main ]
 
 permissions:
-  contents: write
-
-concurrency:
-  group: "pages-${{ github.ref }}"
-  cancel-in-progress: true
+  contents: write
 
 jobs:
-  build-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 0
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
 
-      # Cache Hugo Modules (path ที่ถูกต้อง)
-      - name: Cache Hugo Modules
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/hugo/modules
-          key: ${{ runner.os }}-hugo-${{ hashFiles('go.mod', 'go.sum') }}
-          restore-keys: ${{ runner.os }}-hugo-
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
 
-      - name: Setup Hugo (extended)
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
-          extended: true
+      - name: Build
+        run: |
+          hugo --cleanDestinationDir --minify --baseURL "https://jukejeew.github.io/sarazian/"
 
-      - name: Build
-        env:
-          HUGO_ENV: production
-        run: |
-          hugo --gc --minify --cleanDestinationDir \
-               --baseURL "https://jukejeew.github.io/sarazian/" \
-               --enableGitInfo
-
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./public
-          force_orphan: true
-
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./public
+          force_orphan: false
