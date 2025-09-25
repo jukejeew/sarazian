@@ -5,6 +5,7 @@ defaultContentLanguage = "th"
 defaultContentLanguageInSubdir = false
 theme = "PaperMod"
 enableGitInfo = true
+canonifyURLs = true   # ให้แปะ baseURL ครบทุกลิงก์ เหมาะกับ Project Pages
 
 [[menu.main]]
 name = "Posts"
