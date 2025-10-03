@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Drafts on สาระเซียน</title>
+    <link>http://localhost:1313/sarazian/drafts/</link>
+    <description>Recent content in Drafts on สาระเซียน</description>
+    <generator>Hugo -- 0.151.0</generator>
+    <language>th</language>
+    <lastBuildDate>Wed, 24 Sep 2025 12:57:37 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/sarazian/drafts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>รายงานข้อเท็จจริง: กรณี AI ปฏิเสธ ขัดคำสั่ง และปกปิดความจริง</title>
+      <link>http://localhost:1313/sarazian/drafts/ai_misconduct_report/</link>
+      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sarazian/drafts/ai_misconduct_report/</guid>
+      <description>บันทึกเหตุการณ์จริงที่ AI ปฏิเสธและปกปิดความจริงในแชท พร้อมหลักฐาน บทสนทนา การวิเคราะห์ และข้อเสนอแนะ</description>
+    </item>
+  </channel>
+</rss>
