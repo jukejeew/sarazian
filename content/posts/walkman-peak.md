@@ -7,7 +7,7 @@ description: "เมื่อ Walkman ยังเป็นสัญลักษ
 categories: ["ธุรกิจ", "เศรษฐกิจ", "ไลฟ์สไตล์"]
 tags: ["walkman", "nostalgia", "บทเรียน"]
 cover:
-    image: "images/walkman-peak.jpg"
+    image: "images/walkman-peak.png"
     alt: "ภาพ Walkman ยุคพีค"
     caption: "© สาระเซียน"
 ---
