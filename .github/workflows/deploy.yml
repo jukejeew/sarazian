@@ -42,7 +42,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./public
-          force_orphan: true
+          force_orphan: false
           # ถ้าใช้โดเมนเองในอนาคต:
           # cname: yourdomain.tld
 
