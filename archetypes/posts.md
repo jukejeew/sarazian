@@ -1,4 +1,4 @@
----
+'''
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: true
@@ -24,7 +24,7 @@ license:
   holder: "{{ .Site.Params.author }}"
   year: "{{ (time .Date).Year }}"
   text: ""
----
+'''
 
 ## Hook เปิดเรื่อง
 (เล่าเหตุการณ์/ฉากสั้น ๆ ที่ดึงผู้อ่านเข้ามา)
