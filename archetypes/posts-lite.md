@@ -5,7 +5,6 @@ draft: true
 categories: []
 tags: []
 author: "{{ .Site.Params.author }}"
-
 license:
   mode: show
   style: copyright
@@ -21,4 +20,3 @@ license:
 
 ## มุมมองผู้เขียน
 (สรุป/ข้อคิด 3–5 บรรทัด)
-
