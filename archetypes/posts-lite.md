@@ -1,4 +1,4 @@
----
+'''
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: true
@@ -10,7 +10,7 @@ license:
   style: copyright
   holder: "{{ .Site.Params.author }}"
   year: "{{ (time .Date).Year }}"
----
+'''
 
 ## Hook
 (ฉากหรือประโยคเปิด)
