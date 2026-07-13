@@ -1,38 +1,29 @@
 ---
-# ============ META พื้นฐาน ============
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: true
 categories: []
 tags: []
-author: "{{ .Site.Params.author }}"   # ตั้งค่าใน hugo.toml → [params] author = "วัยสนธยา"
+author: "{{ .Site.Params.author }}"
 
-# ============ FOOTER NOTE (บันทึก/ชวนคุยท้ายบท) ============
 footerNote:
-  mode: hide            # show | hide
-  title: ""             # หัวข้อสั้น เช่น "ชวนคุย"
-  text: ""              # เนื้อหา รองรับ Markdown
+  mode: hide
+  title: ""
+  text: ""
 
-# ============ CREDIT (เครดิตเผยแพร่/ผู้เขียน) ============
 credit:
-  mode: hide            # show | hide
+  mode: hide
   siteName: "{{ .Site.Params.siteName | default "สาระเซียน" }}"
-  author: ""            # เว้นว่าง = fallback ไปที่ .Params.author / .Site.Params.author
+  author: ""
 
-# ============ LICENSE (เลือก style ได้: cc | copyright | custom) ============
 license:
-  mode: hide            # show | hide
-  style: copyright      # <-- ค่าเริ่มต้น: 'copyright' ดูเรียบ ใช้ง่าย
-  # --- โหมด CC ---
-  type: "BY-NC-SA 4.0"  # ใช้เมื่อ style: cc
+  mode: hide
+  style: copyright
+  type: "BY-NC-SA 4.0"
   url: "https://creativecommons.org/licenses/by-nc-sa/4.0/"
-
-  # --- โหมด Copyright ---
-  holder: "{{ .Site.Params.author }}"  # ผู้ถือลิขสิทธิ์ (fallback = ผู้เขียน)
-  year: "{{ (time .Date).Year }}"      # ปีลิขสิทธิ์ (ดึงจากวันที่โพสต์)
-
-  # --- โหมด Custom ---
-  text: ""               # เขียนข้อความเองได้ รองรับ Markdown (ใช้เมื่อ style: custom)
+  holder: "{{ .Site.Params.author }}"
+  year: "{{ (time .Date).Year }}"
+  text: ""
 ---
 
 ## Hook เปิดเรื่อง
@@ -52,4 +43,3 @@ license:
 
 ## มุมมองผู้เขียน
 (ข้อคิด/บทสรุปที่อยากฝากผู้อ่าน)
-
