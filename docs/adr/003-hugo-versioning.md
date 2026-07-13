@@ -17,5 +17,5 @@ Hugo มี release ใหม่อย่างต่อเนื่อง
 ## Decision
 **Pin Hugo version** ใน workflow และ CI:  
 ```yaml
-hugo-version: '0.151.0'
+hugo-version: '0.151.0' -> '0.164.0'
 
