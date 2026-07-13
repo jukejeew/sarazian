@@ -1,6 +1,7 @@
 baseURL = "https://jukejeew.github.io/sarazian/"
 title = "สาระเซียน"
-languageCode = "th"
+#languageCode = "th"
+locale= "th"
 defaultContentLanguage = "th"
 defaultContentLanguageInSubdir = false
 theme = "PaperMod"
