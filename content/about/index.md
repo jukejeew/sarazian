@@ -10,8 +10,10 @@ footerNote: { mode: hide }
 credit:     { mode: hide }
 license:    { mode: hide }
 ---
-<dev align=center>
-        ### ☕ ทุกเรื่องราวมีชีวิต
+
+<!--- div style="text-align: center; max-width: 700px; margin: 0 auto; padding: 2rem 1rem;"--->
+<div style="text-align: center; max-width: 680px; margin: 3rem auto; padding: 2.5rem 1.5rem; background: #1f1f1f; border-radius: 16px;">
+    ### ☕ ทุกเรื่องราวมีชีวิต
         
         
         
@@ -39,9 +41,9 @@ license:    { mode: hide }
         แต่ละบทความตั้งใจให้มีสาระพอคิดต่อ  
         และนุ่มพอจะอ่านเพลิน  
         เหมือนบทสนทนา ที่ไม่ต้องรีบร้อน  
-</dev>
-<br>
 
+    <br>
 
 >**“**เผื่อคุณจะได้อะไร**ติดมือกลับไป**  
 >**… *นอกจากรอยยิ้ม ...*”**
+</div>
