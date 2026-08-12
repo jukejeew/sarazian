@@ -11,7 +11,7 @@ credit:     { mode: hide }
 license:    { mode: hide }
 ---
 
-<!--- div style="text-align: center; max-width: 700px; margin: 0 auto; padding: 2rem 1rem;"--->
+<!-- <div style="text-align: center; max-width: 700px; margin: 0 auto; padding: 2rem 1rem;"> -->
 <div style="text-align: center; max-width: 680px; margin: 3rem auto; padding: 2.5rem 1.5rem;">
     ### ☕ ทุกเรื่องราวมีชีวิต
         
@@ -22,7 +22,7 @@ license:    { mode: hide }
         
         
         ThinkPad เก่าถูกเปิดขึ้นบนโต๊ะไม้เล็กๆ   
-        กลิ่นกาแฟจางๆ ลอยอวนอยู่ในโถง
+        กลิ่นกาแฟจางๆ ลอยออยู่ในโถง
         
         
         
